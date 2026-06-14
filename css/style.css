@@ -907,3 +907,96 @@ svg.ico, svg.tf-ico, svg.btn-ico, svg.logo-icon {
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
 }
+
+/* ============== BACKGROUND IMAGE OVERRIDE ============== */
+body {
+    background:
+      linear-gradient(rgba(0, 19, 29, 0.55), rgba(0, 19, 29, 0.7)),
+      url("../pics/bg.png") center center / cover no-repeat fixed,
+      #001b29 !important;
+}
+/* Hide the procedural machine-room props now that we have a real background */
+.room-bg .wall,
+.room-bg .pipe,
+.room-bg .pipe-v,
+.room-bg .valve,
+.room-bg .floor { display: none !important; }
+.room-bg { background: transparent !important; }
+.scanlines { opacity: 0.45; }
+.vignette  { background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.85) 100%); }
+
+/* ============== LAYOUT / READABILITY FIXES ============== */
+/* Replace fixed 3-col grid with one that survives narrow widths */
+.play-grid {
+    grid-template-columns: minmax(220px, 260px) minmax(0, 1fr) minmax(220px, 260px);
+    align-items: start;
+}
+.question-card,
+.build-col { min-width: 0; }
+
+/* Stronger backdrop on panels so text is always legible against the photo bg */
+.px-panel {
+    background: linear-gradient(180deg, rgba(7, 80, 110, 0.96) 0%, rgba(0, 19, 29, 0.96) 100%) !important;
+    backdrop-filter: blur(2px);
+}
+.instruction-box { background: rgba(6, 9, 15, 0.92); }
+.badge-title,
+.question-type { background: rgba(6, 9, 15, 0.95); }
+.part-chip { background: rgba(6, 9, 15, 0.95); }
+
+/* Question text: bigger, darker plate */
+.question-text {
+    background: rgba(6, 9, 15, 0.7);
+    border: 2px solid #00131d;
+    padding: 1rem 1.25rem;
+    min-height: 120px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Buttons: ensure label is readable on small screens, prevent wrap */
+.tf-btn { white-space: nowrap; min-width: 140px; }
+.truefalse-buttons { flex-wrap: wrap; }
+
+/* Header doesn't crush on mobile */
+.game-header { padding: 0 0.5rem; }
+.logo-badge { flex-wrap: wrap; justify-content: center; text-align: center; font-size: 9px; }
+
+/* ============== RESPONSIVE — IMPROVED ============== */
+@media (max-width: 1100px) {
+    .play-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    .question-card {
+        grid-column: 1 / -1;
+        order: -1;
+    }
+}
+@media (max-width: 720px) {
+    .game-container { padding: 1rem 0.75rem; }
+    .play-grid { grid-template-columns: 1fr; }
+    .character-stage { height: 260px; }
+    .build-col { padding: 1rem 0.75rem; }
+    .intro-card { padding: 1.75rem 1.25rem; }
+    .game-title { font-size: 16px; line-height: 1.5; }
+    .game-subtitle { font-size: 8px; letter-spacing: 2px; }
+    .instruction-box { font-size: 16px; padding: 0.85rem 1rem; }
+    .main-instruction { line-height: 1.6; }
+    .question-text { font-size: 17px; min-height: 90px; padding: 0.85rem; }
+    .tf-btn { min-width: 0; flex: 1 1 140px; padding: 12px 14px; font-size: 9px; }
+    .truefalse-buttons { gap: 12px; }
+    .px-panel { padding: 1rem 0.85rem; }
+    .equip-card { padding: 1.5rem 1rem 1.25rem; width: 100%; }
+    .equip-card h2 { font-size: 11px; }
+    .equip-card p { font-size: 16px; }
+    .parts-list { gap: 5px; }
+    .part-chip { font-size: 6px; padding: 4px 7px; }
+    .academy-footer { font-size: 6px; line-height: 1.6; }
+}
+@media (max-width: 400px) {
+    .logo-badge { font-size: 8px; padding: 8px 12px; letter-spacing: 1px; }
+    .brand-logo-frame { width: 72px; height: 72px; }
+    .brand-logo-img { width: 56px; height: 56px; }
+    .launch-btn { padding: 14px 24px; font-size: 11px; }
+}
