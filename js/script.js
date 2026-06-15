@@ -338,15 +338,15 @@ function showFinalScoreModal(variant) {
   let rank = 'MISSION REPORT';
   let msg = '';
   if (variant === 'perfect') {
-    rank = 'FLAWLESS LAUNCH';
-    msg = 'A perfect rocket. Every system nominal, every part pristine. You are mission-ready.';
-  } else if (variant === 'mid') {
-    rank = 'ORBIT REACHED';
-    msg = 'Solid mission. The rocket reached orbit with minor damage — refine your weak areas and reach for the stars.';
-  } else {
-    rank = 'LOW THRUST';
-    msg = 'Too many damaged parts. Review the SOP & PS guidelines, then try again to achieve a clean launch.';
-  }
+  rank = 'FLAWLESS LAUNCH';
+  msg = 'အမှားအယွင်းမရှိသည့် လွှတ်တင်မှု နှင့် စနစ်အားလုံး ပုံမှန်အတိုင်းဖြစ်ပြီး အစိတ်အပိုင်းတိုင်းမှာ အကောင်းပကတိအတိုင်းပင်။ သင်သည် မစ်ရှင်အတွက် အဆင်သင့်ဖြစ်နေပါပြီ။';
+} else if (variant === 'mid') {
+  rank = 'ORBIT REACHED';
+  msg = 'အောင်မြင်သော မစ်ရှင်။ Rocket သည် အနည်းငယ် ထိခိုက်မှုဖြင့် ပတ်လမ်းကြောင်းသို့ ရောက်ရှိခဲ့သည်။ အားနည်းချက်များကို ပြန်လည်ပြုပြင်ပြီး ပိုမိုကောင်းမွန်အောင် ကြိုးစားပါ။';
+} else {
+  rank = 'LOW THRUST';
+  msg = 'အစိတ်အပိုင်းများစွာ ပျက်စီးသွားပါသည်။ SOP နှင့် PS လမ်းညွှန်ချက်များကို ပြန်လည်စစ်ဆေးပြီး အောင်မြင်စွာ လွှတ်တင်နိုင်ရန် ထပ်မံကြိုးစားပါ။';
+}
   finalRank.innerText = rank;
   finalMessage.innerText = msg;
   finalModal.classList.add('active');
