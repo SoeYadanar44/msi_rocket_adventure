@@ -1,328 +1,414 @@
-
+// ---------- QUESTION BANKS (8 SOP + 8 PS) ----------
 const sopBank = [
-    { text: "A Statement of Purpose should focus mainly on childhood dreams rather than academic achievements.", answer: false },
-    { text: "It's recommended to include specific research interests when applying to graduate programs.", answer: true },
-    { text: "An SOP should exceed 2000 words to be impressive.", answer: false },
-    { text: "Using clichés and overused phrases strengthens your SOP.", answer: false },
-    { text: "The SOP should demonstrate a clear link between past experiences and future goals.", answer: true },
-    { text: "Mentioning the names of professors you wish to work with is not advisable.", answer: false },
-    { text: "A compelling SOP is tailored for each university/program.", answer: true },
-    { text: "Grammar mistakes create a positive impression of authenticity.", answer: false },
-    { text: "Including volunteer experience can be valuable in an SOP.", answer: true },
-    { text: "An SOP should never mention weaknesses or gaps.", answer: false },
-    { text: "The opening paragraph should hook the reader's attention.", answer: true },
-    { text: "Listing achievements without context is effective.", answer: false },
-    { text: "SOP must be written in a formal but engaging tone.", answer: true },
-    { text: "You should hide your passion and just state facts.", answer: false },
-    { text: "Connecting personal narrative to program values is powerful.", answer: true }
+  { 
+    text: "Statement of Purpose ရဲ့ အဓိကရည်ရွယ်ချက်မှာ အနာဂတ် Career Goal (အလုပ်အကိုင် ရည်မှန်းချက်)နှင့် Academic Plan ကိုတင်ပြရန်ဖြစ်သည်။", 
+    answer: true,
+    explanation: "SOP သည် မိမိ၏ ဖြတ်သန်းခဲ့ရသော အတွေ့အကြုံများနှင့် အနာဂတ် ရည်မှန်းချက်များကို ဆက်စပ်ပြပြီး၊ မိမိသွားမည့် လမ်းကြောင်းနှင့် ရည်ရွယ်ချက်ကို စနစ်တကျ ဖော်ပြရမည် ဖြစ်သည်။" 
+  },
+  { 
+    text: "SOP ရေးတဲ့အခါ ကိုယ်တက်ချင်တဲ့ တက္ကသိုလ်က ပါမောက္ခတွေရဲ့ သုတေသန (Research) အကြောင်းကို ထည့်သွင်းဖော်ပြရန် မလိုပါ။ ", 
+    answer: false,
+    explanation: "မိမိတက်ရောက်လိုသော ကျောင်းမှ ပါမောက္ခများ၏ သုတေသနလုပ်ငန်းများကို လေ့လာပြီး ထည့်သွင်းဖော်ပြခြင်းဖြင့် မိမိ၏ စိတ်ဝင်စားမှုနှင့် အဆိုပါ ပရိုဂရမ်အပေါ် မည်မျှ လိုက်ဖက်ညီမှုရှိကြောင်း ပြသရာရောက်ပါသည်။" // ပြင်ဆင်ထားသည့်အချက်
+  },
+  { 
+    text: "SOPရဲ့ စာစီစာကုံးထဲမှာ 'ကျွန်တော် ဘာကြောင့် ဒီဘာသာရပ်/တက္ကသိုလ်ကို တက်ရတာလဲ' ဆိုတဲ့ ခိုင်မာတဲ့ အကြောင်းပြချက် (Purpose) ပါရပါမယ်။", 
+    answer: true,
+    explanation: "ဘာသာရပ်အပေါ် မိမိ၏ စစ်မှန်သော စိတ်ဝင်စားမှုနှင့် ကျောင်း၏ သင်ရိုးညွှန်းတမ်းများနှင့် မိမိ၏ ရည်မှန်းချက် မည်မျှ ကိုက်ညီမှု ရှိသည်ကို သက်သေပြရာ ရောက်ပါသည်။" 
+  },
+  { 
+    text: "SOP ထဲမှာ ကိုယ့်ရဲ့ ငယ်ဘဝအကြောင်းတွေ၊ မိသားစုအကြောင်းတွေကို စာမျက်နှာအပြည့် အသေးစိတ် ရေးရပါမည်။ ", 
+    answer: false,
+    explanation: "Professional ဆန်သော လေသံဖြင့် ရေးသားရန် လိုအပ်သည်။ မိမိ၏ ပညာရေး ခရီးစဉ်နှင့် တိုက်ရိုက် မသက်ဆိုင်ပါက ငယ်ဘဝ အကြောင်းအရာ အသေးစိတ်များကို ထည့်သွင်း ရေးသားရန် မလိုပါ။" 
+  },
+  { 
+    text: "SOP အရေးအသားပုံစံ (Tone) သည် Professional ဆန်ပြီး စနစ်တကျ ရှိရပါမည်။ ", 
+    answer: true,
+    explanation: "ပညာရေးလောကမှ တာဝန်ရှိသူများသည် စနစ်တကျရှိပြီး သပ်ရပ်ပြတ်သားသော၊ အပြန်အလှန် လေးစားမှုရှိသော ဆက်သွယ်ပြောဆိုမှုမျိုးကို မျှော်လင့်ထားကြသည်။" 
+  },
+  { 
+    text: "University Ranking မြင့်လို့ ဒီကျောင်းကို ရွေးချယ်တာပါဆိုတဲ့ အချက်တစ်ခုတည်းက SOP အတွက် လုံလောက်သော အကြောင်းပြချက် ဖြစ်သည်။", 
+    answer: false,
+    explanation: "ကျောင်းတိုင်းတွင် မိမိတို့၏ ထူးခြားသော အားသာချက်များ ရှိကြသည်။ ထိုကြောင့် မိမိ လျှောက်ထားရခြင်းမှာ ထိုကျောင်းနှင့် မည်မျှ သင့်တော် ကိုက်ညီကြောင်းကို သီးသန့် ကွဲပြားအောင် ထည့်သွင်း ရေးသားရမည်။" 
+  },
+  { 
+    text: "SOP ထဲမှာ ဘွဲရပြီးရင် ဘယ်လိုလုပ်ငန်းခွင်မျိုးမှာ ဘာဆက်လုပ်မယ်ဆိုတဲ့ ၃ နှစ်စာ Plan ပါဝင်သင့်သည်။", 
+    answer: true,
+    explanation: "ဘွဲ့ရပြီးနောက် ရှေ့ဆက်မည့် အစီအစဉ်များကို ဖော်ပြခြင်းက မိမိတွင် ခိုင်မာပြတ်သားသော ရည်မှန်းချက်၊ လမ်းကြောင်းနှင့် အနာဂတ်အတွက် သေချာပြင်ဆင်ထားမှု ရှိကြောင်းကို ပေါ်လွင်စေသည်။" // ပြင်ဆင်ထားသည့်အချက်
+  },
+  { 
+    text: "တူညီသော SOP တစ်စောင်ထဲကို ကိုယ်လျှောက်ထားလိုသောတက္ကသိုယ်အသီးသီးသို့ ပေးပိုလျှောက်ထားနိုင်သည်။", 
+    answer: false,
+    explanation: "တက္ကသိုလ်တစ်ခုချင်းစီတွင် မတူညီသော သင်ရိုးညွှန်းတမ်းများနှင့် အားသာချက်များ ရှိကြသဖြင့် မိမိ၏ SOP ကို သက်ဆိုင်ရာ ကျောင်းအလိုက် သီးသန့် အံဝင်ခွင်ကျဖြစ်အောင် (Tailor လုပ်ပြီး) ပြင်ဆင်ရေးသားရမည်။" 
+  }
 ];
-
 const psBank = [
-    { text: "A Personal Statement should be identical to the Statement of Purpose.", answer: false },
-    { text: "PS focuses more on personal challenges and growth.", answer: true },
-    { text: "It's okay to include sensitive controversial topics aggressively.", answer: false },
-    { text: "Personal Statement should reflect your unique identity.", answer: true },
-    { text: "Avoid any storytelling element in PS.", answer: false },
-    { text: "Hardships should be described without demonstrating resilience.", answer: false },
-    { text: "A great PS often shows authenticity and vulnerability maturely.", answer: true },
-    { text: "You can reuse the same PS for every university.", answer: false },
-    { text: "Career goals are irrelevant in a Personal Statement.", answer: false },
-    { text: "Over-editing removes your voice.", answer: true },
-    { text: "It should answer 'why you' and 'why this field'.", answer: true },
-    { text: "Humor is always inappropriate in PS.", answer: false },
-    { text: "Exaggeration of achievements is recommended.", answer: false },
-    { text: "Personal Statement must include future research plans.", answer: false },
-    { text: "Showing growth mindset is beneficial.", answer: true }
+  { 
+    text: "Personal Statement ဆိုသည်မှာ ကိုယ့်ရဲ့ Grade တွေ၊ GPA တွေနောက်ကွယ်က ကိုယ့် Identity ကို ပြရခြင်း ဖြစ်သည်။", 
+    answer: true,
+    explanation: "Personal Statement သည် အမှတ်စာရင်းများထဲတွင် မမြင်နိုင်သော မိမိ၏ စရိုက်လက္ခဏာ၊ စိတ်အားထက်သန်မှုနှင့် မိမိ မည်သူမည်ဝါဖြစ်ကြောင်း (Identity) ကို ဆွဲဆောင်မှုရှိရှိ ပုံဖော်ပြသရမည့် နေရာဖြစ်သည်။" 
+  },
+  { 
+    text: "ဘဝမှာ ကြုံတွေ့ခဲ့ရတဲ့ စိန်ခေါ်မှုတွေ၊ အခက်အခဲတွေကို ဘယ်လိုကျော်ဖြတ်ခဲ့လဲဆိုတဲ့ Story ကို Personal Statement မှာ ရေးလို့ရသည်။", 
+    answer: true,
+    explanation: "မိမိ ကြုံတွေ့ခဲ့ရသည့် ရုန်းကန်ရမှုများနှင့် ၎င်းတို့ကို မည်သို့ကျော်ဖြတ်ခဲ့ပုံ ဇာတ်ကြောင်းသည် မိမိ၏ ရင့်ကျက်မှုနှင့် စိတ်ဓာတ်ကြံ့ခိုင်မှုကို ပြသရာတွင် အလွန်ထိရောက်ပါသည်။" 
+  },
+  { 
+    text: "Personal Statement ထဲမှာလည်း CV ထဲကအတိုင်း ကိုယ့်ရဲ့ ရမှတ်စာရင်းတွေကိုပဲ စာရင်းဇယားလိုက် ထပ်ပြီး စီပြရမည်။", 
+    answer: false,
+    explanation: "ရမှတ်များနှင့် အောင်မြင်မှုစာရင်းများကို CV နှင့် Transcript များတွင် တွေ့နိုင်ပြီးသားဖြစ်သဖြင့် PS တွင် အဆိုပါအချက်အလက်များကို ထပ်ခါတလဲလဲ စာရင်းစီပြရန် မလိုပါ။" 
+  },
+  { 
+    text: "Personal Statement တွင် ကိုယ်လုပ်ခဲ့ဖူးသော လူမှုအကျိုးပြု Volunteer အတွေ့အကြုံများက ကိုယ့်အမြင်ကို ဘယ်လိုပြောင်းလဲစေခဲ့ကြောင်း ထည့်ရေးနိုင်သည်။", 
+    answer: true,
+    explanation: "ပရဟိတလုပ်ငန်းများမှတစ်ဆင့် မိမိ၏ အတွေးအခေါ်နှင့် ကမ္ဘာ့အမြင် မည်သို့ပြောင်းလဲတိုးတက်လာကြောင်း ဖော်ပြခြင်းက မိမိ၏ ဘက်စုံတော်မှုကို ပေါ်လွင်စေသည်။" 
+  },
+  { 
+    text: "Personal Statement သည် ကိုယ့်ရဲ့ Soft Skills (ဥပမာ - ခေါင်းဆောင်မှု၊ စာနာနားလည်မှု) များကို ပေါ်လွင်အောင် ရေးရမည့်နေရာ ဖြစ်သည်။", 
+    answer: true,
+    explanation: "စာမေးပွဲအမှတ်များထက် လူသားဆန်သော အရည်အချင်းများဖြစ်သည့် ဦးဆောင်နိုင်စွမ်း၊ အများအပြားနှင့် ပူးပေါင်းဆောင်ရွက်နိုင်စွမ်း စသည့် Soft Skills များကို ပေါ်လွင်အောင် ရေးသားရမည့်နေရာဖြစ်သည်။" 
+  },
+  { 
+    text: "ကျောင်းလျှောက်တဲ့အခါ SOP ရော Personal Statement ရောက တူတူပဲမို စာတစ်စောင်တည်းကို နာမည်ပြောင်းပြီး နှစ်နေရာလုံးမှာ တင်လိုရသည်။", 
+    answer: false,
+    explanation: "SOP သည် ပညာရေးနှင့် အလုပ်အကိုင်ရည်မှန်းချက် (Academic & Career Goals) ကို အဓိကထားပြီး၊ PS သည် မိမိ၏ ကိုယ်ရေးကိုယ်တာ ဇာတ်ကြောင်းနှင့် စရိုက်လက္ခဏာ (Personal Story & Values) ကို ဦးစားပေးသဖြင့် ရည်ရွယ်ချက် လုံးဝမတူပါ။" 
+  },
+  { 
+    text: "Personal Statement ၏ အရေးအသားပုံစံ (Tone) သည် SOP ထက်စာလျှင် ပိုပြီး Personal ဖြစ်နိုင်ပြီး Storytelling ဆန်ဆန် ရေးသားနိုင်သည်။", 
+    answer: true,
+    explanation: "SOP ကဲ့သို့ Formal ဆန်လွန်းသော ပုံစံခွက်ကြီးအတိုင်း မဟုတ်ဘဲ မိမိဘဝအတွေ့အကြုံများကို ဆွဲဆောင်မှုရှိသော Storytelling ပုံစံဖြင့် ပိုမိုနီးကပ်စွာ ရေးသားခွင့်ရှိသည်။" 
+  },
+  { 
+    text: "ကိုယ့်ရဲ့ အကျင့်စာရိတ္တ၊ Values (တန်ဖိုးထားမှုများ) နဲ့စိတ်ဓာတ်ကြံ့ခိုင်မှု(Resilience)ကိုပြသဖို အကောင်းဆုံး စာစီစာကုံးမှာ Personal Statement (PS) ဖြစ်သည်။", 
+    answer: true,
+    explanation: "မိမိ၏ အတွင်းစိတ်ခံယူချက်၊ ကိုယ်ကျင့်တန်ဖိုးများနှင့် အခက်အခဲများကို မဆုတ်မနစ် ကျော်ဖြတ်နိုင်စွမ်း (Resilience) တို့ကို စစ်မှန်စွာ ချပြရန် PS သည် အသင့်တော်ဆုံး စာစီစာကုံး ဖြစ်သည်။" 
+  }
 ];
 
-const rocketPartsList   = ["Main Engine", "Fuel Tank", "Guidance Computer", "Heat Shield", "Crew Capsule", "Nose Cone"];
-const explorerPartsList = ["Helmet", "Oxygen Pack", "Exosuit", "Utility Belt", "Grip Gloves", "Jetpack"];
+const ROCKET_PARTS = ["Main Engine", "Fuel Tank", "Guidance Computer", "Side Fins", "Crew Capsule", "Nose Cone"];
 
-// Inline SVG icon snippets (used inside part chips & equip overlay)
-const SVG = {
-    ref: (id) => `<svg viewBox="0 0 24 24" width="100%" height="100%"><use href="#${id}"/></svg>`,
-};
+// DOM
+const introDiv = document.getElementById('introWrapper');
+const gameArea = document.getElementById('gamePlayArea');
+const beginBtn = document.getElementById('beginAdventureBtn');
+const trueBtn = document.getElementById('trueBtn');
+const falseBtn = document.getElementById('falseBtn');
+const questionText = document.getElementById('questionText');
+const questionTypeBadge = document.getElementById('questionTypeBadge');
+const questionIndex = document.getElementById('questionIndex');
+const progressFill = document.getElementById('progressFill');
+const progressCounter = document.getElementById('progressCounter');
+const rocketContainer = document.getElementById('rocketPartsContainer');
+const rocketSvg = document.getElementById('rocketSvg');
+const rocketStage = document.querySelector('.rocket-stage');
+const resultModal = document.getElementById('resultModal');
+const resultCard = resultModal.querySelector('.result-card');
+const resultTitle = document.getElementById('resultTitle');
+const resultDesc = document.getElementById('resultDesc');
+const resultIcon = document.getElementById('resultIcon');
+const continueResultBtn = document.getElementById('continueResultBtn');
+const launchOverlay = document.getElementById('launchOverlay');
+const finalModal = document.getElementById('finalModal');
+const finalCard = document.getElementById('finalCard');
+const finalRank = document.getElementById('finalRank');
+const finalMessage = document.getElementById('finalMessage');
+const statTotal = document.getElementById('statTotal');
+const statSop = document.getElementById('statSop');
+const statPs = document.getElementById('statPs');
+const playAgainFinalBtn = document.getElementById('playAgainFinalBtn');
+const hudStatus = document.getElementById('hudStatus');
+const hudIntegrity = document.getElementById('hudIntegrity');
 
-function chipMarkup(name, state) {
-    let iconId;
-    if      (state === 'broken')   iconId = 'i-warn';
-    else if (state === 'equipped') iconId = 'i-check';
-    else                            iconId = 'i-lock';
-    const cls = state === 'equipped' ? 'equipped'
-              : state === 'broken'   ? 'equipped broken'
-              : '';
-    return `<div class="part-chip ${cls}"><span class="chip-ico">${SVG.ref(iconId)}</span>${name}</div>`;
-}
-
-// ----------------- DOM -----------------
-const $ = (id) => document.getElementById(id);
-const introDiv   = $('introWrapper');
-const gameArea   = $('gamePlayArea');
-const beginBtn   = $('beginAdventureBtn');
-const trueBtn    = $('trueBtn');
-const falseBtn   = $('falseBtn');
-const questionText  = $('questionText');
-const questionType  = $('questionTypeBadge');
-const feedbackMsg   = $('feedbackMsg');
-const progressCounter = $('progressCounter');
-const progressFill  = $('progressFill');
-const rocketContainer   = $('rocketPartsContainer');
-const explorerContainer = $('explorerPartsContainer');
-const rocketSvg     = $('rocketSvg');
-const explorerSvg   = $('explorerSvg');
-const equipOverlay  = $('equipOverlay');
-const equipTitle    = $('equipTitle');
-const equipDesc     = $('equipDesc');
-const equipIcon     = $('equipIcon');
-const continueEquipBtn = $('continueFromEquip');
-const confettiBox   = $('confetti');
-const launchOverlay = $('launchOverlay');
-
-// ----------------- STATE -----------------
-let currentGameQuestions = [];
-let currentQIndex = 0;
-let sopCorrectCount = 0;
-let psCorrectCount = 0;
+// State
+let currentQuestions = [];
+let currentIndex = 0;
+let answeredCount = 0;
+let correctTotal = 0;
+let sopCorrect = 0;
+let psCorrect = 0;
+let rocketBroken = new Array(6).fill(false);
 let waitingForContinue = false;
 let gameActive = false;
-let answeredLock = false;
-let rocketBroken = [];
-let explorerBroken = [];
+let lockedAnswer = false;
+let pendingAnswer = null;
 
-// ----------------- HELPERS -----------------
-function shuffle(bank, count) {
-    const a = [...bank];
-    for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a.slice(0, count);
+function shufflePick(arr, count) {
+  const s = [...arr];
+  for (let i = s.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [s[i], s[j]] = [s[j], s[i]];
+  }
+  return s.slice(0, count);
 }
 
-function buildAlternatingGame() {
-    const sop = shuffle(sopBank, 6);
-    const ps  = shuffle(psBank, 6);
-    const list = [];
-    for (let i = 0; i < 6; i++) {
-        list.push({ ...sop[i], type: 'sop' });
-        list.push({ ...ps[i],  type: 'ps'  });
-    }
-    return list;
+function generateGameQuestions() {
+  const sop = shufflePick(sopBank, 3);
+  const ps = shufflePick(psBank, 3);
+  const out = [];
+  for (let i = 0; i < 3; i++) {
+    out.push({ ...sop[i], type: 'sop' });
+    out.push({ ...ps[i], type: 'ps' });
+  }
+  return out;
 }
 
-function updateProgressUI() {
-    rocketContainer.innerHTML = rocketPartsList.map((name, i) => {
-        const equipped = i < sopCorrectCount;
-        const state = !equipped ? 'locked' : (rocketBroken[i] ? 'broken' : 'equipped');
-        return chipMarkup(name, state);
-    }).join('');
-    explorerContainer.innerHTML = explorerPartsList.map((name, i) => {
-        const equipped = i < psCorrectCount;
-        const state = !equipped ? 'locked' : (explorerBroken[i] ? 'broken' : 'equipped');
-        return chipMarkup(name, state);
-    }).join('');
-    rocketSvg.setAttribute('data-level', String(sopCorrectCount));
-    explorerSvg.setAttribute('data-level', String(psCorrectCount));
+function updateRocketUI() {
+  rocketContainer.innerHTML = ROCKET_PARTS.map((name, i) => {
+    const installed = i < answeredCount;
+    const broken = installed && rocketBroken[i];
+    const cls = !installed ? '' : (broken ? 'equipped broken' : 'equipped');
+    const icon = !installed ? 'i-lock' : (broken ? 'i-warn' : 'i-check');
+    return `<div class="part-chip ${cls}"><span class="chip-ico"><svg viewBox="0 0 24 24" width="100%" height="100%"><use href="#${icon}"/></svg></span>${name}</div>`;
+  }).join('');
+  rocketSvg.setAttribute('data-level', String(answeredCount));
+  document.querySelectorAll('.rk-part, .rk-flame').forEach(el => {
+    const p = parseInt(el.getAttribute('data-part'), 10);
+    if (rocketBroken[p-1]) el.classList.add('broken');
+    else el.classList.remove('broken');
+  });
+  const percent = (answeredCount / 6) * 100;
+  progressFill.style.width = `${percent}%`;
+  progressCounter.innerText = `QUESTION ${answeredCount} / 6`;
 
-    rocketSvg.querySelectorAll('.rk-part, .rk-flame').forEach(el => {
-        const p = parseInt(el.getAttribute('data-part'), 10);
-        el.classList.toggle('broken', !!rocketBroken[p - 1]);
-    });
-    explorerSvg.querySelectorAll('.ex-part').forEach(el => {
-        const p = parseInt(el.getAttribute('data-part'), 10);
-        el.classList.toggle('broken', !!explorerBroken[p - 1]);
-    });
-
-    const total = currentGameQuestions.length || 12;
-    progressFill.style.width = `${(currentQIndex / total) * 100}%`;
+  // HUD
+  const brokenCount = rocketBroken.slice(0, answeredCount).filter(Boolean).length;
+  const integrity = answeredCount === 0 ? 100 : Math.round(((answeredCount - brokenCount) / answeredCount) * 100);
+  hudIntegrity.innerText = `${integrity}%`;
+  hudStatus.innerText = answeredCount === 0 ? 'STANDBY' : answeredCount === 6 ? 'READY' : 'ASSEMBLING';
 }
 
-function flashJustEquipped(type, partIndex) {
-    const svg = type === 'sop' ? rocketSvg : explorerSvg;
-    const selector = type === 'sop' ? '.rk-part' : '.ex-part';
-    const el = svg.querySelector(`${selector}[data-part="${partIndex}"]`);
-    if (!el) return;
-    el.classList.remove('just-equipped');
-    // force reflow to restart anim
-    void el.getBoundingClientRect();
-    el.classList.add('just-equipped');
+// Advanced equip animation: drop + ring + sparks
+function flashPart(index, isCorrect) {
+  const parts = document.querySelectorAll('.rk-part');
+  const partEl = parts[index-1];
+  if (partEl) {
+    partEl.classList.add('just-equipped');
+    setTimeout(() => partEl.classList.remove('just-equipped'), 750);
+  }
+  // Shockwave ring
+  const ring = document.createElement('div');
+  ring.className = 'equip-ring' + (isCorrect ? '' : ' bad');
+  rocketStage.appendChild(ring);
+  setTimeout(() => ring.remove(), 750);
+
+  // Sparks
+  const sparks = document.createElement('div');
+  sparks.className = 'equip-sparks' + (isCorrect ? '' : ' bad');
+  sparks.innerHTML = '<span></span>'.repeat(8);
+  rocketStage.appendChild(sparks);
+  setTimeout(() => sparks.remove(), 700);
 }
 
-function displayCurrentQuestion() {
-    if (!gameActive || currentQIndex >= currentGameQuestions.length) return;
-    const q = currentGameQuestions[currentQIndex];
-    questionText.textContent = q.text;
-    questionType.innerHTML = q.type === 'sop'
-        ? `${SVG.ref('i-rocket')} SOP · ROCKET PART`
-        : `${SVG.ref('i-astronaut')} PS · EXPLORER GEAR`;
-    progressCounter.textContent = `QUESTION ${currentQIndex + 1} / ${currentGameQuestions.length}`;
-    feedbackMsg.innerHTML = '';
-    answeredLock = false;
-    trueBtn.disabled = false;
-    falseBtn.disabled = false;
-    trueBtn.classList.remove('flash-correct', 'flash-wrong');
-    falseBtn.classList.remove('flash-correct', 'flash-wrong');
+function showResultModalForAnswer(isCorrect, qData) {
+  const iconSvg = isCorrect ? '<svg viewBox="0 0 24 24"><use href="#i-check"/></svg>' : '<svg viewBox="0 0 24 24"><use href="#i-x"/></svg>';
+  resultIcon.innerHTML = iconSvg;
+  resultTitle.innerText = isCorrect ? "CORRECT" : "INCORRECT";
+  resultCard.classList.remove('correct', 'incorrect');
+  resultCard.classList.add(isCorrect ? 'correct' : 'incorrect');
+  const expl = qData.explanation || (isCorrect ? "Solid knowledge." : `The correct answer is ${qData.answer ? "TRUE" : "FALSE"}.`);
+  resultDesc.innerText = expl;
+  resultModal.classList.add('active');
 }
 
-function spawnConfetti() {
-    if (!confettiBox) return;
-    confettiBox.innerHTML = '';
-    const colors = ['#ef233c', '#f5fbff', '#d90429', '#34d399', '#003f5c'];
-    for (let i = 0; i < 60; i++) {
-        const c = document.createElement('span');
-        c.style.left = Math.random() * 100 + '%';
-        c.style.background = colors[i % colors.length];
-        c.style.animationDelay = (Math.random() * 0.5) + 's';
-        c.style.transform = `rotate(${Math.random() * 360}deg)`;
-        confettiBox.appendChild(c);
-    }
-    setTimeout(() => { confettiBox.innerHTML = ''; }, 2400);
+function commitAnswerAndContinue() {
+  if (!pendingAnswer) return;
+  const { isCorrect, qData } = pendingAnswer;
+  const partIndex = answeredCount;
+  rocketBroken[partIndex] = !isCorrect;
+  answeredCount++;
+  if (isCorrect) {
+    correctTotal++;
+    if (qData.type === 'sop') sopCorrect++;
+    else psCorrect++;
+  }
+  updateRocketUI();
+  flashPart(partIndex + 1, isCorrect);
+  pendingAnswer = null;
+
+  // If all 6 parts are assembled, trigger launch
+  if (answeredCount === 6) {
+    setTimeout(finishGameAndLaunch, 900);
+  }
 }
 
-function showEquipmentAnimation(type, stepNumber, isBroken) {
-    let title, desc, iconId;
-    if (type === 'sop') {
-        const name = rocketPartsList[stepNumber-1];
-        title = isBroken ? `DAMAGED PART — ${name}` : `ROCKET EQUIP — ${name}`;
-        desc  = isBroken
-            ? `A broken ${name} was bolted on. The rocket will fly… less reliably.`
-            : `Part ${stepNumber} / 6 installed into Sky Rocket`;
-        iconId = isBroken ? 'i-warn' : 'i-gear';
-    } else {
-        const name = explorerPartsList[stepNumber-1];
-        title = isBroken ? `DAMAGED GEAR — ${name}` : `EXPLORER GEAR — ${name}`;
-        desc  = isBroken
-            ? `A faulty ${name} was strapped on. The explorer is in for a rough ride.`
-            : `Equipment ${stepNumber} / 6 added to explorer suit`;
-        iconId = isBroken ? 'i-warn' : 'i-spark';
-    }
-    equipTitle.textContent = title;
-    equipDesc.textContent  = desc;
-    equipIcon.innerHTML    = SVG.ref(iconId);
-    equipOverlay.classList.toggle('is-broken', !!isBroken);
-    equipOverlay.classList.add('active');
-    if (!isBroken) spawnConfetti();
+function loadCurrentQuestion() {
+  if (!gameActive || answeredCount >= 6) return;
+  const q = currentQuestions[currentIndex];
+  questionText.innerText = q.text;
+  const typeLabel = q.type === 'sop' ? 'SOP CHALLENGE' : 'PS CHALLENGE';
+  const iconId = q.type === 'sop' ? 'i-rocket' : 'i-astronaut';
+  questionTypeBadge.innerHTML = `<svg width="12" height="12"><use href="#${iconId}"/></svg> ${typeLabel}`;
+  questionIndex.innerText = String(answeredCount + 1).padStart(2, '0') + ' / 06';
+  progressCounter.innerText = `QUESTION ${answeredCount+1} / 6`;
+  lockedAnswer = false;
+  trueBtn.disabled = false;
+  falseBtn.disabled = false;
+  document.getElementById('feedbackMsg').innerHTML = '';
 }
 
-function processAnswer(qType, isBroken) {
-    if (qType === 'sop') {
-        rocketBroken[sopCorrectCount] = !!isBroken;
-        sopCorrectCount++;
-        updateProgressUI();
-        if (!isBroken) flashJustEquipped('sop', sopCorrectCount);
-        showEquipmentAnimation('sop', sopCorrectCount, isBroken);
-    } else {
-        explorerBroken[psCorrectCount] = !!isBroken;
-        psCorrectCount++;
-        updateProgressUI();
-        if (!isBroken) flashJustEquipped('ps', psCorrectCount);
-        showEquipmentAnimation('ps', psCorrectCount, isBroken);
-    }
-    waitingForContinue = true;
-    trueBtn.disabled = true;
-    falseBtn.disabled = true;
+function handleAnswer(selectedBool) {
+  if (!gameActive || waitingForContinue || lockedAnswer || answeredCount >= 6) return;
+  const q = currentQuestions[currentIndex];
+  if (!q) return;
+  const isCorrect = (selectedBool === q.answer);
+  lockedAnswer = true;
+  trueBtn.disabled = true;
+  falseBtn.disabled = true;
+  pendingAnswer = { isCorrect, qData: q };
+  showResultModalForAnswer(isCorrect, q);
+  waitingForContinue = true;
 }
 
-function finishMission() {
-    gameActive = false;
-    const brokenCount = rocketBroken.filter(Boolean).length + explorerBroken.filter(Boolean).length;
-    if (brokenCount === 0) {
-        questionType.innerHTML = `${SVG.ref('i-star')} ORBIT ACHIEVED`;
-        questionText.innerHTML = `<b>FLAWLESS MISSION!</b><br/>Every part is pristine. The Sky Rocket soars into orbit.`;
-        feedbackMsg.innerHTML  = `<svg style="width:14px;height:14px;color:var(--gold);fill:var(--gold)"><use href="#i-star"/></svg><span style="color: var(--gold)">12 / 12 correct · 0 damaged parts</span>`;
-    } else {
-        questionType.innerHTML = `${SVG.ref('i-warn')} MISSION COMPLETE — WITH DAMAGE`;
-        questionText.innerHTML = `The Sky Rocket lifts off, but <b>${brokenCount}</b> damaged part${brokenCount>1?'s':''} rattle in the hull.<br/>Replay to fly a clean mission.`;
-        feedbackMsg.innerHTML  = `<span style="color: var(--red)">${brokenCount} damaged part${brokenCount>1?'s':''} installed from wrong answers.</span>`;
-    }
-    trueBtn.style.display = 'none';
-    falseBtn.style.display = 'none';
-    progressCounter.textContent = 'COMPLETE 12 / 12';
-    progressFill.style.width = '100%';
-
-    launchOverlay.classList.add('active');
-    setTimeout(() => launchOverlay.classList.remove('active'), 2400);
-
-    const old = $('finalCustomBtn'); if (old) old.remove();
-    const btn = document.createElement('button');
-    btn.id = 'finalCustomBtn';
-    btn.className = 'play-again';
-    btn.innerHTML = `${SVG.ref('i-refresh')} PLAY AGAIN`;
-    btn.onclick = resetToIntro;
-    document.querySelector('.question-card').appendChild(btn);
+// 3 separate launch animations based on score — with countdown + ignition + shake
+function runCountdown() {
+  return new Promise(resolve => {
+    const cdNumber = document.getElementById('cdNumber');
+    const cdStatus = document.getElementById('cdStatus');
+    launchOverlay.classList.add('active', 'cd-active');
+    const steps = [
+      { n: '3', s: 'IGNITION SEQUENCE' },
+      { n: '2', s: 'FUEL PRESSURIZED' },
+      { n: '1', s: 'ALL SYSTEMS GO' },
+      { n: 'LIFTOFF', s: 'MAIN ENGINE START', go: true }
+    ];
+    let i = 0;
+    const tick = () => {
+      if (i >= steps.length) {
+        launchOverlay.classList.remove('cd-active');
+        return resolve();
+      }
+      const step = steps[i++];
+      cdNumber.classList.remove('go');
+      // re-trigger animation
+      void cdNumber.offsetWidth;
+      cdNumber.innerText = step.n;
+      if (step.go) cdNumber.classList.add('go');
+      cdStatus.innerText = step.s;
+      setTimeout(tick, step.go ? 900 : 800);
+    };
+    tick();
+  });
 }
 
-function continueAfterEquip() {
-    if (!waitingForContinue) return;
-    equipOverlay.classList.remove('active');
-    waitingForContinue = false;
-    currentQIndex++;
-    updateProgressUI();
-    if (currentQIndex < currentGameQuestions.length) displayCurrentQuestion();
-    else finishMission();
+function triggerIgnition(variant) {
+  launchOverlay.classList.add('igniting');
+  // screen shake — hard for perfect, medium for mid, jittery for low
+  document.body.classList.remove('shaking', 'shaking-hard');
+  void document.body.offsetWidth;
+  if (variant === 'low') {
+    document.body.classList.add('shaking-hard');
+    setTimeout(() => document.body.classList.remove('shaking-hard'), 3000);
+  } else {
+    document.body.classList.add('shaking');
+    setTimeout(() => document.body.classList.remove('shaking'), 600);
+  }
+  setTimeout(() => launchOverlay.classList.remove('igniting'), 1700);
 }
 
-function handleAnswer(selected) {
-    if (!gameActive || waitingForContinue || answeredLock) return;
-    const q = currentGameQuestions[currentQIndex];
-    if (!q) return;
-    const correct = selected === q.answer;
-    const btn = selected ? trueBtn : falseBtn;
-    answeredLock = true;
-    trueBtn.disabled = true;
-    falseBtn.disabled = true;
-    if (correct) {
-        btn.classList.add('flash-correct');
-        feedbackMsg.innerHTML = `<svg style="color:var(--green);fill:var(--green)"><use href="#i-check"/></svg><span style="color: var(--green)">Correct! Equipping part…</span>`;
-        setTimeout(() => processAnswer(q.type, false), 450);
-    } else {
-        btn.classList.add('flash-wrong');
-        feedbackMsg.innerHTML = `<svg style="color:var(--red);fill:var(--red)"><use href="#i-x"/></svg><span style="color: var(--red)">Wrong! A broken part will be installed…</span>`;
-        setTimeout(() => processAnswer(q.type, true), 600);
-    }
+async function finishGameAndLaunch() {
+  gameActive = false;
+  let variant = 'low';
+  if (correctTotal === 6) variant = 'perfect';
+  else if (correctTotal >= 4) variant = 'mid';
+
+  // Pre-launch countdown
+  await runCountdown();
+
+  // Show the scene + ignition burst together
+  launchOverlay.setAttribute('data-variant', variant);
+  triggerIgnition(variant);
+
+  const duration = variant === 'low' ? 3800 : 3400;
+  setTimeout(() => {
+    launchOverlay.classList.remove('active');
+    setTimeout(() => {
+      launchOverlay.setAttribute('data-variant', '');
+      showFinalScoreModal(variant);
+    }, 300);
+  }, duration);
+}
+
+function showFinalScoreModal(variant) {
+  finalCard.classList.remove('perfect', 'mid', 'low');
+  finalCard.classList.add(variant);
+
+  statTotal.innerText = `${correctTotal}/6`;
+  statSop.innerText = `${sopCorrect}/3`;
+  statPs.innerText = `${psCorrect}/3`;
+
+  let rank = 'MISSION REPORT';
+  let msg = '';
+  if (variant === 'perfect') {
+    rank = 'FLAWLESS LAUNCH';
+    msg = 'A perfect rocket. Every system nominal, every part pristine. You are mission-ready.';
+  } else if (variant === 'mid') {
+    rank = 'ORBIT REACHED';
+    msg = 'Solid mission. The rocket reached orbit with minor damage — refine your weak areas and reach for the stars.';
+  } else {
+    rank = 'LOW THRUST';
+    msg = 'Too many damaged parts. Review the SOP & PS guidelines, then try again to achieve a clean launch.';
+  }
+  finalRank.innerText = rank;
+  finalMessage.innerText = msg;
+  finalModal.classList.add('active');
 }
 
 function startNewMatch() {
-    currentGameQuestions = buildAlternatingGame();
-    currentQIndex = 0;
-    sopCorrectCount = 0;
-    psCorrectCount = 0;
-    rocketBroken = new Array(6).fill(false);
-    explorerBroken = new Array(6).fill(false);
-    waitingForContinue = false;
-    gameActive = true;
-    answeredLock = false;
-    trueBtn.style.display = '';
-    falseBtn.style.display = '';
-    const old = $('finalCustomBtn'); if (old) old.remove();
-    updateProgressUI();
-    displayCurrentQuestion();
-}
-
-function resetToIntro() {
-    gameActive = false;
-    introDiv.style.display = '';
-    gameArea.classList.remove('is-active');
-    equipOverlay.classList.remove('active');
-    launchOverlay.classList.remove('active');
+  currentQuestions = generateGameQuestions();
+  currentIndex = 0;
+  answeredCount = 0;
+  correctTotal = 0;
+  sopCorrect = 0;
+  psCorrect = 0;
+  rocketBroken.fill(false);
+  waitingForContinue = false;
+  gameActive = true;
+  lockedAnswer = false;
+  pendingAnswer = null;
+  updateRocketUI();
+  loadCurrentQuestion();
 }
 
 function launchGame() {
-    beginBtn.disabled = true;
-    beginBtn.querySelector('.launch-btn-label').textContent = 'IGNITING…';
-    setTimeout(() => {
-        introDiv.style.display = 'none';
-        gameArea.classList.add('is-active');
-        startNewMatch();
-        beginBtn.disabled = false;
-        beginBtn.querySelector('.launch-btn-label').textContent = 'BEGIN ADVENTURE';
-    }, 700);
+  beginBtn.disabled = true;
+  beginBtn.querySelector('.btn-label').innerText = 'IGNITING...';
+  setTimeout(() => {
+    introDiv.style.display = 'none';
+    gameArea.classList.add('is-active');
+    startNewMatch();
+    beginBtn.disabled = false;
+    beginBtn.querySelector('.btn-label').innerText = 'BEGIN MISSION';
+  }, 500);
 }
 
-// ----------------- BOOT -----------------
+function resetToIntro() {
+  gameActive = false;
+  introDiv.style.display = '';
+  gameArea.classList.remove('is-active');
+  finalModal.classList.remove('active');
+  resultModal.classList.remove('active');
+  launchOverlay.classList.remove('active');
+}
+
+// Events
 beginBtn.addEventListener('click', launchGame);
 trueBtn.addEventListener('click', () => handleAnswer(true));
 falseBtn.addEventListener('click', () => handleAnswer(false));
-continueEquipBtn.addEventListener('click', continueAfterEquip);
+continueResultBtn.addEventListener('click', () => {
+  if (!waitingForContinue) return;
+  waitingForContinue = false;
+  resultModal.classList.remove('active');
+  commitAnswerAndContinue();   // updates answeredCount, rocket, etc.
+  
+  currentIndex++;              // move to next question
+  
+  if (answeredCount < 6) {
+    loadCurrentQuestion();     // load the new question
+  }
+  // if answeredCount === 6, the game will finish via updateRocketUI's timeout check
+});
+playAgainFinalBtn.addEventListener('click', () => {
+  finalModal.classList.remove('active');
+  resetToIntro();
+});
 
-updateProgressUI();
+updateRocketUI();

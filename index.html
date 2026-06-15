@@ -1,400 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>MSI Academy — SOP Sky Rocket Adventure</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>MSI Academy — Sky Rocket: SOP & PS Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ============== SVG ICON SPRITE ============== -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<!-- Animated starfield background -->
+<div class="starfield" aria-hidden="true">
+  <div class="stars stars-1"></div>
+  <div class="stars stars-2"></div>
+  <div class="stars stars-3"></div>
+  <div class="nebula"></div>
+</div>
+
+<div class="game-container">
+  <header class="game-header">
+    <div class="logo-badge">
+      <img src="images/logo.png" alt="MSI Academy" class="logo-img" />
+      <span>MSI ACADEMY <em>·</em> SOP / PS CHALLENGE</span>
+    </div>
+  </header>
+
+  <!-- INTRO SECTION -->
+  <section id="introWrapper" class="intro-card-wrapper">
+    <div class="intro-card glass-panel">
+      <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+
+      <div class="brand-logo-frame">
+        <div class="brand-logo-ring"></div>
+        <div class="brand-logo-inner">
+          <img src="images/logo.png" alt="MSI Academy logo" class="brand-logo-img" />
+        </div>
+      </div>
+
+      <img src="images/mascot.png" alt="Astronut mascot" class="mascot-float mascot-intro" />
+
+      <div class="brand-eyebrow">MSI ACADEMY ORIGINAL</div>
+      <h1 class="game-title">
+        <span class="title-line">SOP & PS</span>
+        <span class="title-line title-accent">ROCKET CHALLENGE</span>
+      </h1>
+      <p class="game-subtitle">MISSION CONTROL · 6 QUESTIONS · ROCKET BUILD</p>
+
+
+      <div class="instruction-box">
+        <div class="welcome-text">
+          <span class="status-dot"></span> CADET BRIEFING
+        </div>
+        <p class="main-instruction">
+          <b>SOP မေးခွန်း ၃ ခု + PS မေးခွန်း ၃ ခု</b> — မှန်ကန်တဲ့ အဖြေတစ်ခုစီတိုင်းက <b>ပြီးပြည့်စုံတဲ့ ဒုံးပျံအစိတ်အပိုင်းတစ်ခု</b>ကို တပ်ဆင်ပေးသွားမှာဖြစ်ပါတယ်။
+          အဖြေမှားသွားရင်တော့ <b>ပျက်စီးနေတဲ့ အစိတ်အပိုင်းတစ်ခု</b> တပ်ဆင်မိသွားပါလိမ့်မယ်။ သင့်ဒုံးပျံကို တည်ဆောက်ပြီးတာနဲ့ ပတ်လမ်းထဲကို လွှတ်တင်လိုက်ပါ။
+        </p>
+      </div>
+
+      <button id="beginAdventureBtn" class="px-btn btn-primary launch-btn">
+        <span class="btn-label">BEGIN MISSION</span>
+        <svg class="btn-arrow" width="16" height="16"><use href="#i-arrow"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- GAME AREA -->
+  <section id="gamePlayArea" class="game-play-area">
+    <div class="play-grid">
+      <!-- Rocket build column -->
+      <aside class="build-col rocket-col glass-panel">
+        <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+        <div class="badge-title">
+          <svg width="14" height="14"><use href="#i-rocket"/></svg> SKY ROCKET <span class="hud-dot"></span> ASSEMBLY
+        </div>
+        <div class="character-stage rocket-stage">
+          <div class="stage-grid"></div>
+          <div class="stage-horizon"></div>
+          <div class="stage-glow"></div>
+          <img src="images/mascot.png" alt="" class="mascot-stage" aria-hidden="true" />
+
+
+
+          <div class="exhaust">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+
+          <svg id="rocketSvg" viewBox="0 0 220 420" class="rocket-svg" data-level="0">
+            <defs>
+              <linearGradient id="rkBody" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0" stop-color="#ffffff"/>
+                <stop offset="0.45" stop-color="#ffffff"/>
+                <stop offset="1" stop-color="#d6dde3"/>
+              </linearGradient>
+              <linearGradient id="rkNose" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#e63946"/>
+                <stop offset="1" stop-color="#c1121f"/>
+              </linearGradient>
+              <linearGradient id="rkFin" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#c1121f"/>
+                <stop offset="1" stop-color="#7a0a14"/>
+              </linearGradient>
+              <linearGradient id="rkFlame" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#ffffff"/>
+                <stop offset="0.4" stop-color="#ffd1a8"/>
+                <stop offset="1" stop-color="#c1121f"/>
+              </linearGradient>
+              <radialGradient id="rkVisor" cx="35%" cy="30%">
+                <stop offset="0" stop-color="#ffffff"/>
+                <stop offset="0.6" stop-color="#6ea8c8"/>
+                <stop offset="1" stop-color="#003f5c"/>
+              </radialGradient>
+              <filter id="rkShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+                <feOffset dx="2" dy="3"/>
+                <feComponentTransfer><feFuncA type="linear" slope="0.45"/></feComponentTransfer>
+                <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <!-- Part 1: Engine block (fins/base) -->
+            <g class="rk-part" data-part="1" filter="url(#rkShadow)">
+              <path d="M82 320 L138 320 L150 360 L70 360 Z" fill="#003f5c"/>
+              <path d="M82 320 L138 320 L142 332 L78 332 Z" fill="#0a5478"/>
+              <rect x="100" y="338" width="20" height="22" rx="2" fill="#c1121f"/>
+              <circle cx="110" cy="349" r="3" fill="#ffffff"/>
+            </g>
+            <g class="rk-flame" data-part="1">
+              <path class="flame-outer" d="M82 360 Q94 408 110 420 Q126 408 138 360 Q128 396 110 412 Q92 396 82 360 Z" fill="url(#rkFlame)"/>
+              <path class="flame-inner" d="M94 360 Q102 392 110 402 Q118 392 126 360 Q120 388 110 396 Q100 388 94 360 Z" fill="#ffffff" opacity="0.85"/>
+            </g>
+
+            <!-- Part 2: Fuel tank (main body) -->
+            <g class="rk-part" data-part="2" filter="url(#rkShadow)">
+              <rect x="76" y="216" width="68" height="106" rx="6" fill="url(#rkBody)" stroke="#003f5c" stroke-width="2"/>
+              <rect x="76" y="216" width="68" height="8" fill="#c1121f"/>
+              <rect x="76" y="314" width="68" height="8" fill="#c1121f"/>
+              <text x="110" y="278" text-anchor="middle" fill="#003f5c" font-family="Orbitron" font-size="14" font-weight="800" letter-spacing="2">MSI</text>
+            </g>
+
+            <!-- Part 3: Guidance / window -->
+            <g class="rk-part" data-part="3" filter="url(#rkShadow)">
+              <rect x="80" y="184" width="60" height="32" rx="4" fill="#ffffff" stroke="#003f5c" stroke-width="2"/>
+              <rect x="86" y="190" width="48" height="14" rx="2" fill="#003f5c"/>
+              <circle cx="92" cy="210" r="2.4" fill="#c1121f"/>
+              <circle cx="100" cy="210" r="2.4" fill="#003f5c"/>
+              <circle cx="108" cy="210" r="2.4" fill="#003f5c" opacity="0.4"/>
+            </g>
+
+            <!-- Part 4: Side fins -->
+            <g class="rk-part" data-part="4" filter="url(#rkShadow)">
+              <path d="M76 268 L42 332 L76 318 Z" fill="url(#rkFin)"/>
+              <path d="M144 268 L178 332 L144 318 Z" fill="url(#rkFin)"/>
+              <path d="M76 268 L52 320 L76 312 Z" fill="#ffffff" opacity="0.18"/>
+              <path d="M144 268 L168 320 L144 312 Z" fill="#ffffff" opacity="0.18"/>
+            </g>
+
+            <!-- Part 5: Capsule / visor -->
+            <g class="rk-part" data-part="5" filter="url(#rkShadow)">
+              <path d="M76 184 Q76 134 110 128 Q144 134 144 184 Z" fill="url(#rkBody)" stroke="#003f5c" stroke-width="2"/>
+              <circle cx="110" cy="160" r="16" fill="url(#rkVisor)" stroke="#003f5c" stroke-width="2"/>
+              <circle cx="105" cy="155" r="4" fill="#ffffff" opacity="0.85"/>
+            </g>
+
+            <!-- Part 6: Nose cone + antenna -->
+            <g class="rk-part" data-part="6" filter="url(#rkShadow)">
+              <path d="M76 132 Q110 24 144 132 Z" fill="url(#rkNose)"/>
+              <path d="M76 132 Q110 24 144 132 L130 132 Q110 56 90 132 Z" fill="#ffffff" opacity="0.18"/>
+              <rect x="108" y="14" width="4" height="14" fill="#003f5c"/>
+              <circle cx="110" cy="10" r="4" fill="#ffffff" stroke="#c1121f" stroke-width="2"/>
+            </g>
+          </svg>
+
+          <div class="launch-pad">
+            <div class="launch-pad-stripes"></div>
+            <div class="launch-pad-base"></div>
+          </div>
+        </div>
+
+        <div class="rocket-hud">
+          <div class="hud-row"><span>STATUS</span><b id="hudStatus">STANDBY</b></div>
+          <div class="hud-row"><span>INTEGRITY</span><b id="hudIntegrity">100%</b></div>
+        </div>
+
+        <div id="rocketPartsContainer" class="parts-list"></div>
+      </aside>
+
+      <!-- Question card -->
+      <div class="question-card glass-panel" id="questionCard">
+        <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+        <div class="question-head">
+          <div class="question-type" id="questionTypeBadge">
+            <svg width="12" height="12"><use href="#i-rocket"/></svg> SOP
+          </div>
+          <div class="question-index" id="questionIndex">01 / 06</div>
+        </div>
+        <div class="question-text" id="questionText">Preparing mission...</div>
+        <div class="truefalse-buttons">
+          <button class="tf-btn true-btn px-btn" id="trueBtn">
+            <svg class="tf-ico" width="18" height="18"><use href="#i-check"/></svg>
+            <span>TRUE</span>
+          </button>
+          <button class="tf-btn false-btn px-btn" id="falseBtn">
+            <svg class="tf-ico" width="18" height="18"><use href="#i-x"/></svg>
+            <span>FALSE</span>
+          </button>
+        </div>
+        <div class="feedback-msg" id="feedbackMsg"></div>
+        <div class="counter-info">
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <span id="progressCounter">QUESTION 0 / 6</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="academy-footer">DESIGNED BY MSI ACADEMY <em>·</em> LEARN <em>·</em> BUILD <em>·</em> LAUNCH</footer>
+</div>
+
+<!-- Result modal -->
+<div id="resultModal" class="result-overlay">
+  <div class="result-card glass-panel">
+    <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+    <div class="result-icon" id="resultIcon"></div>
+    <h2 id="resultTitle">Result</h2>
+    <p id="resultDesc" class="result-desc"></p>
+    <button id="continueResultBtn" class="px-btn btn-primary">CONTINUE</button>
+  </div>
+</div>
+
+<!-- Launch overlay: 3 variants -->
+<div id="launchOverlay" class="launch-overlay" data-variant="">
+
+  <!-- Pre-launch countdown (shared) -->
+  <div class="launch-countdown" id="launchCountdown">
+    <div class="cd-frame">
+      <div class="cd-ring"></div>
+      <div class="cd-ring cd-ring-2"></div>
+      <div class="cd-ring cd-ring-3"></div>
+      <div class="cd-label">T-MINUS</div>
+      <div class="cd-number" id="cdNumber">3</div>
+      <div class="cd-status" id="cdStatus">IGNITION SEQUENCE</div>
+    </div>
+    <div class="cd-scanline"></div>
+  </div>
+
+  <!-- Ignition burst (shared) -->
+  <div class="ignition-burst" id="ignitionBurst">
+    <div class="ig-flash"></div>
+    <div class="ig-ring"></div>
+    <div class="ig-ring ig-ring-2"></div>
+    <div class="ig-ring ig-ring-3"></div>
+    <div class="ig-smoke ig-smoke-1"></div>
+    <div class="ig-smoke ig-smoke-2"></div>
+    <div class="ig-smoke ig-smoke-3"></div>
+    <div class="ig-smoke ig-smoke-4"></div>
+  </div>
+
+  <!-- PERFECT: triumphant warp-speed ascent -->
+  <div class="launch-scene scene-perfect">
+    <div class="scene-stars"></div>
+    <div class="warp-lines">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="scene-rays"></div>
+    <div class="scene-firework fw-1"></div>
+    <div class="scene-firework fw-2"></div>
+    <div class="scene-firework fw-3"></div>
+    <div class="scene-firework fw-4"></div>
+    <div class="scene-firework fw-5"></div>
+    <div class="sonic-boom"></div>
+    <div class="sonic-boom boom-2"></div>
+    <div class="scene-headline">FLAWLESS LAUNCH</div>
+    <div class="scene-subline">ALL SYSTEMS NOMINAL</div>
+    <svg class="launch-rocket-svg rocket-perfect" viewBox="0 0 100 200">
+      <path d="M50 5 Q70 60 70 130 L30 130 Q30 60 50 5Z" fill="#ffffff" stroke="#003f5c" stroke-width="2"/>
+      <circle cx="50" cy="70" r="9" fill="url(#rkVisor)" stroke="#003f5c" stroke-width="2"/>
+      <path d="M30 130 L8 175 L30 162Z" fill="#c1121f"/>
+      <path d="M70 130 L92 175 L70 162Z" fill="#c1121f"/>
+      <rect x="46" y="14" width="8" height="50" fill="#c1121f"/>
+      <path d="M40 162 Q50 220 60 162 Q55 200 50 210 Q45 200 40 162Z" fill="#ffd1a8"/>
+      <path d="M44 162 Q50 200 56 162 Q52 188 50 196 Q48 188 44 162Z" fill="#ffffff"/>
+    </svg>
+    <div class="scene-trail"></div>
+    <div class="screen-flash"></div>
+  </div>
+
+  <!-- MID: steady climb through clouds with sun flare -->
+  <div class="launch-scene scene-mid">
+    <div class="sun-flare"></div>
+    <div class="scene-clouds cloud-a"></div>
+    <div class="scene-clouds cloud-b"></div>
+    <div class="scene-clouds cloud-c"></div>
+    <div class="scene-clouds cloud-d"></div>
+    <div class="scene-headline">ORBIT REACHED</div>
+    <div class="scene-subline">MINOR DAMAGE · MISSION SUCCESS</div>
+    <svg class="launch-rocket-svg rocket-mid" viewBox="0 0 100 200">
+      <path d="M50 5 Q70 60 70 130 L30 130 Q30 60 50 5Z" fill="#ffffff" stroke="#003f5c" stroke-width="2"/>
+      <circle cx="50" cy="70" r="9" fill="url(#rkVisor)" stroke="#003f5c" stroke-width="2"/>
+      <path d="M30 130 L8 175 L30 162Z" fill="#c1121f"/>
+      <path d="M70 130 L92 175 L70 162Z" fill="#c1121f"/>
+      <path d="M40 162 Q50 215 60 162 Q55 195 50 205 Q45 195 40 162Z" fill="#ffd1a8"/>
+    </svg>
+    <div class="scene-trail mid-trail"></div>
+  </div>
+
+  <!-- LOW: wobble + smoke struggle + electric sparks -->
+  <div class="launch-scene scene-low">
+    <div class="scene-smoke smoke-a"></div>
+    <div class="scene-smoke smoke-b"></div>
+    <div class="scene-smoke smoke-c"></div>
+    <div class="scene-smoke smoke-d"></div>
+    <div class="electric-sparks">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="scene-warning">
+      <svg width="20" height="20"><use href="#i-warn"/></svg>
+      LOW THRUST DETECTED
+    </div>
+    <div class="scene-headline low-headline">STRUGGLING ASCENT</div>
+    <div class="scene-subline">SYSTEMS UNSTABLE</div>
+    <svg class="launch-rocket-svg rocket-low" viewBox="0 0 100 200">
+      <path d="M50 5 Q70 60 70 130 L30 130 Q30 60 50 5Z" fill="#e8ecef" stroke="#003f5c" stroke-width="2"/>
+      <circle cx="50" cy="70" r="9" fill="#003f5c"/>
+      <path d="M30 130 L8 175 L30 162Z" fill="#7a0a14"/>
+      <path d="M70 130 L92 175 L70 162Z" fill="#7a0a14"/>
+      <path d="M40 162 Q50 195 60 162 Q55 185 50 192 Q45 185 40 162Z" fill="#888"/>
+    </svg>
+  </div>
+</div>
+
+<!-- Final score modal -->
+<div id="finalModal" class="final-modal">
+  <div class="final-card glass-panel" id="finalCard">
+    <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+    <div class="brand-logo-frame final-logo">
+      <div class="brand-logo-inner">
+        <img src="images/logo.png" alt="MSI Academy logo" class="brand-logo-img" />
+      </div>
+    </div>
+    <img src="images/mascot.png" alt="Astronut mascot" class="mascot-float mascot-final" />
+    <div class="final-rank" id="finalRank">MISSION REPORT</div>
+    <h2 class="final-title">MISSION SUMMARY</h2>
+    <div class="final-grid">
+      <div class="final-stat">
+        <span class="stat-label">TOTAL</span>
+        <span class="stat-value" id="statTotal">0/6</span>
+      </div>
+      <div class="final-stat">
+        <span class="stat-label">SOP</span>
+        <span class="stat-value" id="statSop">0/3</span>
+      </div>
+      <div class="final-stat">
+        <span class="stat-label">PS</span>
+        <span class="stat-value" id="statPs">0/3</span>
+      </div>
+    </div>
+    <p class="final-message" id="finalMessage"></p>
+    <button id="playAgainFinalBtn" class="px-btn btn-primary play-again-btn">
+      <svg width="16" height="16"><use href="#i-refresh"/></svg>
+      <span>LAUNCH AGAIN</span>
+    </button>
+  </div>
+</div>
+
+<!-- SVG sprite definitions -->
+<svg style="display:none" width="0" height="0">
   <defs>
-    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 2c3.5 3 5 7 5 11l-2 3v4l-3-2-3 2v-4l-2-3c0-4 1.5-8 5-11z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 16l-3 5 4-1M17 16l3 5-4-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
-    <symbol id="i-astronaut" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 7.5a3 3 0 0 1 3-2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6 21v-4a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 14v7M9 21h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 2c3.5 3 5 7 5 11l-2 3v4l-3-2-3 2v-4l-2-3c0-4 1.5-8 5-11z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-astronaut" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6 21v-4a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v4" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
-    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.2l7.1-.6z" fill="currentColor"/></symbol>
-    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M21 3v5h-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3l10 18H2z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 10v5M12 18v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
-    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
-    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M19 5l-4 4M9 15l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
-    <symbol id="i-gear" viewBox="0 0 24 24"><path d="M12 2l1.5 2.5L16 4l.5 2.7L19 8l-1 2.5L20.5 12 19 13.5 20 16l-2.5 1.5L16 20l-2.5-.5L12 22l-1.5-2.5L8 20l-.5-2.5L5 16l1-2.5L3.5 12 5 10.5 4 8l2.5-1.3L8 4l2.5.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 11V8a4 4 0 1 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3l10 18H2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v5M12 18v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15.5-6.3M21 4v5h-5M21 12a9 9 0 0 1-15.5 6.3M3 20v-5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </defs>
 </svg>
-
-<!-- ============== MACHINE ROOM BACKGROUND ============== -->
-<div class="room-bg" aria-hidden="true">
-    <!-- back wall: riveted plates + grid -->
-    <div class="wall">
-        <div class="wall-grid"></div>
-        <div class="wall-rivets"></div>
-        <!-- big gauge -->
-        <div class="gauge gauge-a">
-            <div class="gauge-face"><div class="gauge-needle"></div><div class="gauge-tick"></div></div>
-            <span class="gauge-label">PSI</span>
-        </div>
-        <div class="gauge gauge-b">
-            <div class="gauge-face"><div class="gauge-needle"></div><div class="gauge-tick"></div></div>
-            <span class="gauge-label">TEMP</span>
-        </div>
-        <!-- monitor screens -->
-        <div class="monitor mon-a"><div class="mon-screen"><span class="mon-line"></span><span class="mon-line"></span><span class="mon-line"></span></div></div>
-        <div class="monitor mon-b"><div class="mon-screen"><span class="mon-line"></span><span class="mon-line"></span><span class="mon-line"></span></div></div>
-        <!-- warning sign -->
-        <div class="warn-sign">DANGER</div>
-        <!-- caged lamp -->
-        <div class="lamp lamp-a"><div class="lamp-bulb"></div><div class="lamp-cage"></div></div>
-        <div class="lamp lamp-b"><div class="lamp-bulb"></div><div class="lamp-cage"></div></div>
-    </div>
-
-    <!-- pipes -->
-    <div class="pipe pipe-1"></div>
-    <div class="pipe pipe-2"></div>
-    <div class="pipe pipe-v pipe-v-1"></div>
-    <div class="pipe pipe-v pipe-v-2"></div>
-    <div class="valve valve-1"></div>
-    <div class="valve valve-2"></div>
-
-    <!-- floor: tiled metal -->
-    <div class="floor"></div>
-
-    <!-- CRT scanlines overlay -->
-    <div class="scanlines"></div>
-    <div class="vignette"></div>
-</div>
-
-<!-- ============== APP SHELL ============== -->
-<div class="game-container">
-
-    <header class="game-header">
-        <div class="logo-badge">
-            <span class="logo-text">MSI ACADEMY · LEARNING LAB</span>
-            <svg class="logo-icon"><use href="#i-rocket"/></svg>
-        </div>
-    </header>
-
-    <!-- ============== INTRO ============== -->
-    <section id="introWrapper" class="intro-card-wrapper">
-        <div class="intro-card px-panel">
-            <span class="px-screw s1"></span><span class="px-screw s2"></span>
-            <span class="px-screw s3"></span><span class="px-screw s4"></span>
-
-            <div class="brand-header-container">
-                <div class="brand-logo-frame">
-                    <div class="brand-logo-frame"><img class="brand-logo-img" src="pics/logo.png" alt="MSI Academy"></div>
-                </div>
-                <p class="brand-eyebrow">MSI ACADEMY ORIGINAL</p>
-                <h1 class="game-title">SOP SKY ROCKET</h1>
-                <p class="game-subtitle">MISSION CONTROL · ACADEMY EDITION</p>
-            </div>
-
-            <div class="instruction-box">
-                <p class="welcome-text"><svg class="ico"><use href="#i-star"/></svg> WELCOME, MSI CADET</p>
-                <p class="main-instruction">
-                    <b>SOP</b> answers build the <b>ROCKET</b> (6 parts)<br>
-                    <b>Personal Statement</b> answers gear the <b>EXPLORER</b> (6 parts)<br>
-                    Questions alternate. Every correct answer unlocks a part.
-                </p>
-            </div>
-
-            <button id="beginAdventureBtn" class="launch-btn px-btn">
-                <span class="launch-btn-label">BEGIN ADVENTURE</span>
-            </button>
-        </div>
-    </section>
-
-    <!-- ============== GAME PLAY AREA ============== -->
-    <section id="gamePlayArea" class="game-play-area">
-        <div class="play-grid">
-
-            <!-- LEFT: rocket build column -->
-            <aside class="build-col rocket-col px-panel">
-                <span class="px-screw s1"></span><span class="px-screw s2"></span>
-                <span class="px-screw s3"></span><span class="px-screw s4"></span>
-                <div class="badge-title"><svg class="ico"><use href="#i-rocket"/></svg> SKY ROCKET</div>
-
-                <div class="character-stage rocket-stage px-inset">
-                    <div class="stage-grid"></div>
-                    <div class="stage-glow"></div>
-
-                    <div class="exhaust" aria-hidden="true">
-                        <span></span><span></span><span></span><span></span><span></span><span></span>
-                    </div>
-
-                    <svg id="rocketSvg" viewBox="0 0 220 420" class="char-svg rocket-svg pixel-sprite" data-level="0">
-                        <defs>
-                            <linearGradient id="rkBody" x1="0" x2="1" y1="0" y2="0">
-                                <stop offset="0" stop-color="#3a4566"/><stop offset="0.18" stop-color="#cfdcf5"/>
-                                <stop offset="0.5" stop-color="#ffffff"/><stop offset="0.82" stop-color="#a8b6d6"/>
-                                <stop offset="1" stop-color="#283150"/>
-                            </linearGradient>
-                            <linearGradient id="rkPanel" x1="0" x2="0" y1="0" y2="1">
-                                <stop offset="0" stop-color="#1a2547"/><stop offset="1" stop-color="#0a1330"/>
-                            </linearGradient>
-                            <linearGradient id="rkFin" x1="0" x2="0" y1="0" y2="1">
-                                <stop offset="0" stop-color="#ff7a3c"/><stop offset="1" stop-color="#c4321a"/>
-                            </linearGradient>
-                            <linearGradient id="rkNose" x1="0" x2="0" y1="0" y2="1">
-                                <stop offset="0" stop-color="#ff7da9"/><stop offset="0.5" stop-color="#ff3b6e"/><stop offset="1" stop-color="#8a1844"/>
-                            </linearGradient>
-                            <radialGradient id="rkVisor" cx="35%" cy="30%">
-                                <stop offset="0" stop-color="#cdfaff"/><stop offset="40%" stop-color="#36b0ff"/><stop offset="100%" stop-color="#062148"/>
-                            </radialGradient>
-                            <linearGradient id="rkFlame" x1="0" x2="0" y1="0" y2="1">
-                                <stop offset="0" stop-color="#ffffff"/><stop offset="0.25" stop-color="#fff1a8"/>
-                                <stop offset="0.55" stop-color="#ff8a3c"/><stop offset="1" stop-color="#ff2e63"/>
-                            </linearGradient>
-                            <radialGradient id="rkHeat" cx="50%" cy="0%">
-                                <stop offset="0" stop-color="#ffd866cc"/><stop offset="100%" stop-color="#ffd86600"/>
-                            </radialGradient>
-                            <filter id="rkGlow" x="-50%" y="-50%" width="200%" height="200%">
-                                <feGaussianBlur stdDeviation="2" result="b"/>
-                                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                        </defs>
-
-                        <ellipse class="rk-haze" cx="110" cy="368" rx="46" ry="10" fill="url(#rkHeat)"/>
-
-                        <g class="rk-part" data-part="1">
-                            <path d="M82 320 L138 320 L150 360 L70 360 Z" fill="url(#rkPanel)" stroke="#0a1330" stroke-width="2"/>
-                            <path d="M82 320 L138 320 L142 332 L78 332 Z" fill="#2a3660"/>
-                            <ellipse cx="110" cy="360" rx="40" ry="6" fill="#0a1330" stroke="#445a86" stroke-width="1.5"/>
-                            <line x1="86" y1="338" x2="134" y2="338" stroke="#445a86" stroke-width="1"/>
-                            <line x1="84" y1="346" x2="136" y2="346" stroke="#445a86" stroke-width="1"/>
-                            <line x1="82" y1="354" x2="138" y2="354" stroke="#445a86" stroke-width="1"/>
-                            <rect x="58" y="324" width="14" height="22" rx="3" fill="#2a3660" stroke="#0a1330" stroke-width="1.5"/>
-                            <rect x="148" y="324" width="14" height="22" rx="3" fill="#2a3660" stroke="#0a1330" stroke-width="1.5"/>
-                        </g>
-                        <g class="rk-flame" data-part="1">
-                            <path class="flame-outer" d="M78 360 Q92 410 110 420 Q128 410 142 360 Q132 396 110 412 Q88 396 78 360 Z" fill="url(#rkFlame)" filter="url(#rkGlow)"/>
-                            <path class="flame-inner" d="M92 360 Q102 396 110 410 Q118 396 128 360 Q120 388 110 400 Q100 388 92 360 Z" fill="#fff7c8" opacity="0.85"/>
-                            <path class="flame-side" d="M62 346 Q65 360 68 346 Z" fill="#ffd86655"/>
-                            <path class="flame-side" d="M152 346 Q155 360 158 346 Z" fill="#ffd86655"/>
-                        </g>
-                        <g class="rk-part" data-part="2">
-                            <rect x="76" y="216" width="68" height="106" rx="10" fill="url(#rkBody)" stroke="#283150" stroke-width="2"/>
-                            <line x1="76" y1="248" x2="144" y2="248" stroke="#445a86" stroke-width="0.7" opacity="0.7"/>
-                            <line x1="76" y1="284" x2="144" y2="284" stroke="#445a86" stroke-width="0.7" opacity="0.7"/>
-                            <line x1="110" y1="216" x2="110" y2="322" stroke="#445a86" stroke-width="0.5" opacity="0.5"/>
-                            <g fill="#445a86">
-                                <circle cx="82" cy="226" r="1.2"/><circle cx="138" cy="226" r="1.2"/>
-                                <circle cx="82" cy="312" r="1.2"/><circle cx="138" cy="312" r="1.2"/>
-                            </g>
-                            <rect x="90" y="258" width="40" height="20" rx="3" fill="#0a1330" stroke="#6ee7ff" stroke-width="1"/>
-                            <rect class="fuel-bar" x="93" y="261" width="34" height="14" rx="2" fill="#ffd866"/>
-                            <rect x="68" y="240" width="8" height="60" rx="2" fill="#445a86"/>
-                            <rect x="144" y="240" width="8" height="60" rx="2" fill="#445a86"/>
-                        </g>
-                        <g class="rk-part" data-part="3">
-                            <rect x="80" y="178" width="60" height="38" rx="6" fill="url(#rkPanel)" stroke="#6ee7ff" stroke-width="1.5"/>
-                            <rect x="86" y="184" width="48" height="14" rx="2" fill="#06203a" stroke="#1f4ad6" stroke-width="0.8"/>
-                            <line x1="92" y1="191" x2="128" y2="191" stroke="#34d399" stroke-width="1"/>
-                            <line class="cmp-scan" x1="86" y1="191" x2="134" y2="191" stroke="#7fe7ff" stroke-width="0.6" opacity="0.7"/>
-                            <circle class="led led-g" cx="92" cy="208" r="2.4" fill="#34d399"/>
-                            <circle class="led led-y" cx="102" cy="208" r="2.4" fill="#fbbf24"/>
-                            <circle class="led led-r" cx="112" cy="208" r="2.4" fill="#f87171"/>
-                            <circle class="led led-c" cx="122" cy="208" r="2.4" fill="#6ee7ff"/>
-                        </g>
-                        <g class="rk-part" data-part="4">
-                            <path d="M76 268 L42 332 L76 318 Z" fill="url(#rkFin)" stroke="#5a1408" stroke-width="1.5"/>
-                            <path d="M144 268 L178 332 L144 318 Z" fill="url(#rkFin)" stroke="#5a1408" stroke-width="1.5"/>
-                            <path d="M76 268 L62 296" stroke="#fff" stroke-width="1.2" opacity="0.5"/>
-                            <path d="M144 268 L158 296" stroke="#fff" stroke-width="1.2" opacity="0.5"/>
-                            <rect x="76" y="312" width="68" height="10" rx="2" fill="#c4321a" stroke="#5a1408" stroke-width="1"/>
-                            <line x1="80" y1="317" x2="140" y2="317" stroke="#ffd86655" stroke-width="0.6"/>
-                        </g>
-                        <g class="rk-part" data-part="5">
-                            <path d="M76 178 Q76 130 110 124 Q144 130 144 178 Z" fill="url(#rkBody)" stroke="#283150" stroke-width="2"/>
-                            <circle cx="110" cy="158" r="14" fill="url(#rkVisor)" stroke="#283150" stroke-width="2"/>
-                            <circle cx="110" cy="158" r="9" fill="none" stroke="#6ee7ff" stroke-width="0.7" opacity="0.6"/>
-                            <ellipse cx="104" cy="152" rx="5" ry="2.5" fill="#ffffff88"/>
-                            <circle cx="110" cy="156" r="3" fill="#0a1330" opacity="0.85"/>
-                            <path d="M76 178 Q110 168 144 178" fill="none" stroke="#445a86" stroke-width="0.8" opacity="0.7"/>
-                        </g>
-                        <g class="rk-part" data-part="6">
-                            <path d="M76 128 Q110 28 144 128 Z" fill="url(#rkNose)" stroke="#5a0d2e" stroke-width="2"/>
-                            <path d="M110 40 L110 124" stroke="#ffd866" stroke-width="1.5" opacity="0.7"/>
-                            <line x1="110" y1="36" x2="110" y2="14" stroke="#cfdcf5" stroke-width="2"/>
-                            <circle class="ant-tip" cx="110" cy="12" r="3.6" fill="#ffd866"/>
-                            <circle class="ant-glow" cx="110" cy="12" r="8" fill="#ffd86644"/>
-                        </g>
-                    </svg>
-
-                    <div class="launch-pad"></div>
-                </div>
-                <div id="rocketPartsContainer" class="parts-list"></div>
-            </aside>
-
-            <!-- CENTER: question card -->
-            <div class="question-card px-panel" id="questionCard">
-                <span class="px-screw s1"></span><span class="px-screw s2"></span>
-                <span class="px-screw s3"></span><span class="px-screw s4"></span>
-                <div class="question-type" id="questionTypeBadge">SOP Question</div>
-                <div class="question-text" id="questionText">Loading…</div>
-                <div class="truefalse-buttons">
-                    <button class="tf-btn true-btn px-btn" id="trueBtn"><svg class="tf-ico"><use href="#i-check"/></svg> TRUE</button>
-                    <button class="tf-btn false-btn px-btn" id="falseBtn"><svg class="tf-ico"><use href="#i-x"/></svg> FALSE</button>
-                </div>
-                <div class="feedback-msg" id="feedbackMsg"></div>
-                <div class="counter-info">
-                    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-                    <span id="progressCounter">Question 1 / 12</span>
-                </div>
-            </div>
-
-            <!-- RIGHT: explorer build column -->
-            <aside class="build-col explorer-col px-panel">
-                <span class="px-screw s1"></span><span class="px-screw s2"></span>
-                <span class="px-screw s3"></span><span class="px-screw s4"></span>
-                <div class="badge-title"><svg class="ico"><use href="#i-astronaut"/></svg> EXPLORER</div>
-
-                <div class="character-stage explorer-stage px-inset">
-                    <div class="stage-grid"></div>
-                    <div class="stage-glow purple"></div>
-
-                    <svg id="explorerSvg" viewBox="0 0 220 360" class="char-svg explorer-svg pixel-sprite" data-level="0">
-                        <defs>
-                            <linearGradient id="exSuit" x1="0" x2="0" y1="0" y2="1">
-                                <stop offset="0" stop-color="#ffffff"/><stop offset="0.5" stop-color="#dee6fb"/><stop offset="1" stop-color="#8597bf"/>
-                            </linearGradient>
-                            <linearGradient id="exArm" x1="0" x2="1">
-                                <stop offset="0" stop-color="#8597bf"/><stop offset="0.5" stop-color="#eaf1ff"/><stop offset="1" stop-color="#8597bf"/>
-                            </linearGradient>
-                            <radialGradient id="exVisor" cx="35%" cy="28%">
-                                <stop offset="0" stop-color="#e8feff"/><stop offset="35%" stop-color="#5dd3ff"/>
-                                <stop offset="78%" stop-color="#1a4ad6"/><stop offset="100%" stop-color="#02061f"/>
-                            </radialGradient>
-                            <linearGradient id="exMetal" x1="0" x2="0" y1="0" y2="1">
-                                <stop offset="0" stop-color="#7c8db8"/><stop offset="1" stop-color="#283150"/>
-                            </linearGradient>
-                            <linearGradient id="exJet" x1="0" x2="0" y1="0" y2="1">
-                                <stop offset="0" stop-color="#fff"/><stop offset="0.4" stop-color="#7fe7ff"/><stop offset="1" stop-color="#1f4ad6"/>
-                            </linearGradient>
-                            <filter id="exGlow" x="-50%" y="-50%" width="200%" height="200%">
-                                <feGaussianBlur stdDeviation="1.6" result="b"/>
-                                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                        </defs>
-
-                        <g class="ex-idle">
-                            <ellipse class="ex-shadow" cx="110" cy="340" rx="46" ry="6" fill="#00000088"/>
-                            <rect x="86" y="232" width="20" height="64" rx="9" fill="url(#exSuit)" stroke="#6f80ad" stroke-width="2"/>
-                            <rect x="114" y="232" width="20" height="64" rx="9" fill="url(#exSuit)" stroke="#6f80ad" stroke-width="2"/>
-                            <rect x="84" y="258" width="24" height="8" rx="3" fill="#445a86"/>
-                            <rect x="112" y="258" width="24" height="8" rx="3" fill="#445a86"/>
-                            <path d="M82 292 H110 V310 Q110 318 102 318 H82 Z" fill="#0d1530" stroke="#1c2440" stroke-width="1.5"/>
-                            <path d="M138 292 H110 V310 Q110 318 118 318 H138 Z" fill="#0d1530" stroke="#1c2440" stroke-width="1.5"/>
-                            <rect x="82" y="312" width="28" height="4" fill="#ffd866"/>
-                            <rect x="110" y="312" width="28" height="4" fill="#ffd866"/>
-                            <path d="M78 150 Q110 142 142 150 L138 230 Q110 238 82 230 Z" fill="url(#exSuit)" stroke="#6f80ad" stroke-width="2"/>
-                            <line x1="110" y1="150" x2="110" y2="232" stroke="#6f80ad" stroke-width="0.8" opacity="0.6"/>
-                            <g class="ex-arm ex-arm-l">
-                                <rect x="48" y="154" width="22" height="74" rx="11" fill="url(#exArm)" stroke="#6f80ad" stroke-width="2"/>
-                                <circle cx="59" cy="232" r="13" fill="url(#exSuit)" stroke="#6f80ad" stroke-width="2"/>
-                            </g>
-                            <g class="ex-arm ex-arm-r">
-                                <rect x="150" y="154" width="22" height="74" rx="11" fill="url(#exArm)" stroke="#6f80ad" stroke-width="2"/>
-                                <circle cx="161" cy="232" r="13" fill="url(#exSuit)" stroke="#6f80ad" stroke-width="2"/>
-                            </g>
-                            <circle cx="110" cy="108" r="34" fill="#f1d9bf" stroke="#a98963" stroke-width="2"/>
-                            <circle cx="100" cy="108" r="3" fill="#1c2440"/>
-                            <circle cx="120" cy="108" r="3" fill="#1c2440"/>
-                            <path d="M100 122 Q110 128 120 122" stroke="#1c2440" stroke-width="2" fill="none" stroke-linecap="round"/>
-
-                            <g class="ex-part" data-part="1">
-                                <circle cx="110" cy="108" r="48" fill="none" stroke="#dfe9ff" stroke-width="3"/>
-                                <circle cx="110" cy="108" r="44" fill="url(#exVisor)" opacity="0.92"/>
-                                <ellipse cx="96" cy="92" rx="14" ry="6" fill="#ffffff99"/>
-                                <ellipse cx="124" cy="120" rx="6" ry="3" fill="#ffffff66"/>
-                                <path class="visor-sweep" d="M70 100 Q110 80 150 100" stroke="#fff" stroke-width="1.4" fill="none" opacity="0.55"/>
-                                <ellipse cx="110" cy="148" rx="38" ry="6" fill="none" stroke="#dfe9ff" stroke-width="2"/>
-                            </g>
-                            <g class="ex-part" data-part="2">
-                                <rect x="76" y="156" width="16" height="68" rx="7" fill="url(#exMetal)" stroke="#0a1330" stroke-width="1.5"/>
-                                <rect x="128" y="156" width="16" height="68" rx="7" fill="url(#exMetal)" stroke="#0a1330" stroke-width="1.5"/>
-                                <circle cx="84" cy="160" r="4" fill="#6ee7ff"/>
-                                <circle cx="136" cy="160" r="4" fill="#6ee7ff"/>
-                                <path d="M80 174 v44 M88 174 v44" stroke="#1f4ad6" stroke-width="0.5" opacity="0.7"/>
-                                <path d="M132 174 v44 M140 174 v44" stroke="#1f4ad6" stroke-width="0.5" opacity="0.7"/>
-                            </g>
-                            <g class="ex-part" data-part="3">
-                                <path d="M70 152 Q90 138 110 146 Q130 138 150 152 L146 168 Q110 158 74 168 Z" fill="url(#exMetal)" stroke="#0a1330" stroke-width="1.5"/>
-                                <rect x="92" y="172" width="36" height="26" rx="4" fill="#0a1330" stroke="#6ee7ff" stroke-width="1.2"/>
-                                <circle class="led" cx="100" cy="184" r="2.4" fill="#34d399"/>
-                                <circle class="led" cx="110" cy="184" r="2.4" fill="#fbbf24"/>
-                                <circle class="led" cx="120" cy="184" r="2.4" fill="#f87171"/>
-                                <rect x="96" y="190" width="28" height="4" rx="1" fill="#06203a"/>
-                                <rect class="chest-bar" x="97" y="191" width="26" height="2" fill="#6ee7ff"/>
-                            </g>
-                            <g class="ex-part" data-part="4">
-                                <rect x="74" y="216" width="72" height="14" rx="3" fill="#ffd866" stroke="#a07b1a" stroke-width="1.2"/>
-                                <rect x="100" y="212" width="20" height="20" rx="3" fill="#a98963" stroke="#5a3a14" stroke-width="1"/>
-                                <circle cx="110" cy="222" r="3" fill="#ffd866"/>
-                                <rect x="78" y="220" width="8" height="14" rx="1" fill="#445a86"/>
-                                <rect x="134" y="220" width="8" height="14" rx="1" fill="#445a86"/>
-                            </g>
-                            <g class="ex-part" data-part="5">
-                                <circle cx="59" cy="232" r="14" fill="#ff5b8a" stroke="#7a1740" stroke-width="1.5"/>
-                                <circle cx="161" cy="232" r="14" fill="#ff5b8a" stroke="#7a1740" stroke-width="1.5"/>
-                                <path d="M51 232 L67 232 M53 226 L65 226 M53 238 L65 238" stroke="#7a1740" stroke-width="1"/>
-                                <path d="M153 232 L169 232 M155 226 L167 226 M155 238 L167 238" stroke="#7a1740" stroke-width="1"/>
-                            </g>
-                            <g class="ex-part" data-part="6">
-                                <rect x="86" y="234" width="48" height="22" rx="5" fill="url(#exMetal)" stroke="#0a1330" stroke-width="1.5"/>
-                                <rect x="90" y="238" width="14" height="14" rx="2" fill="#06203a" stroke="#6ee7ff" stroke-width="0.8"/>
-                                <rect x="116" y="238" width="14" height="14" rx="2" fill="#06203a" stroke="#6ee7ff" stroke-width="0.8"/>
-                                <g class="jet-flames" filter="url(#exGlow)">
-                                    <path class="jet-l" d="M92 256 Q97 286 102 256 Z" fill="url(#exJet)"/>
-                                    <path class="jet-r" d="M118 256 Q123 286 128 256 Z" fill="url(#exJet)"/>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
-                </div>
-                <div id="explorerPartsContainer" class="parts-list"></div>
-            </aside>
-        </div>
-    </section>
-    <footer class="academy-footer">DESIGNED BY MSI ACADEMY · LEARN · BUILD · LAUNCH</footer>
-</div>
-
-<!-- ============== EQUIP OVERLAY ============== -->
-<div id="equipOverlay" class="equipment-overlay">
-    <div class="equip-card px-panel">
-        <span class="px-screw s1"></span><span class="px-screw s2"></span>
-        <span class="px-screw s3"></span><span class="px-screw s4"></span>
-        <div class="equip-ring"></div>
-        <div class="equip-ring inner"></div>
-        <div class="equip-icon" id="equipIcon"><svg><use href="#i-gear"/></svg></div>
-        <h2 id="equipTitle">Equipping part…</h2>
-        <p id="equipDesc">Installation in progress</p>
-        <button id="continueFromEquip" class="continue-equip-btn px-btn">
-            CONTINUE <svg class="btn-ico"><use href="#i-arrow-right"/></svg>
-        </button>
-    </div>
-    <div class="confetti" id="confetti"></div>
-</div>
-
-<!-- ============== LAUNCH OVERLAY ============== -->
-<div id="launchOverlay" class="launch-overlay">
-    <svg class="launch-rocket pixel-sprite" viewBox="0 0 100 200" aria-hidden="true">
-        <defs>
-            <linearGradient id="lrBody" x1="0" x2="1"><stop offset="0" stop-color="#283150"/><stop offset="0.5" stop-color="#fff"/><stop offset="1" stop-color="#283150"/></linearGradient>
-            <linearGradient id="lrFlame" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="0.5" stop-color="#ff8a3c"/><stop offset="1" stop-color="#ff2e63"/></linearGradient>
-        </defs>
-        <path d="M50 5 Q70 60 70 130 L30 130 Q30 60 50 5Z" fill="url(#lrBody)" stroke="#0a1330" stroke-width="1.5"/>
-        <circle cx="50" cy="70" r="9" fill="#6ee7ff" stroke="#1f4ad6" stroke-width="2"/>
-        <path d="M30 130 L10 170 L30 160Z" fill="#ff7a3c"/>
-        <path d="M70 130 L90 170 L70 160Z" fill="#ff7a3c"/>
-        <path d="M40 160 Q50 210 60 160 Q55 195 50 200 Q45 195 40 160Z" fill="url(#lrFlame)"/>
-    </svg>
-</div>
 
 <script src="js/script.js"></script>
 </body>
